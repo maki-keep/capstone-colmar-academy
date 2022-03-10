@@ -31,7 +31,7 @@ h3 {
     font-weight: 500;
 }
 
-h4, footer a, footer a[href] {
+h4, footer a {
     color: #666;
     font-size: .75rem;
     font-weight: 500;
@@ -40,6 +40,11 @@ h4, footer a, footer a[href] {
 a[href] {
     color: #069;
     text-decoration: none;
+    transition: color .2s ease-in-out;
+}
+
+a[href]:hover {
+    color: #046;
 }
 
 button {
@@ -67,9 +72,16 @@ figcaption {
 }
 
 nav {
+    background-color: #FFF;
+    border-bottom: 1px solid #999;
     height: 4rem;
     padding: 0 1.5rem;
     width: 100%;
+    z-index: 2;
+
+    position: fixed;
+    top: 0;
+    left: 0;
 
     display: flex;
     align-items: center;
@@ -98,9 +110,16 @@ nav #logo-text-2 {
     color: #999;
 }
 
-
 nav ul, footer ul {
     display: inline-flex;
+}
+
+ul:hover a[href] {
+    color: #08C;
+}
+
+ul:hover a[href]:hover {
+    color: #046;
 }
 
 nav a, footer a {
@@ -112,6 +131,7 @@ nav a, footer a {
     background-color: #FFF;
     border-right: 1px solid #999;
     border-left: 1px solid #999;
+    padding-top: 4rem;
 }
 
 #banner {
@@ -196,6 +216,7 @@ nav a, footer a {
 #courses {
     background-color: #DDD;
     padding: 2rem 4.5rem;
+    width: 100%;
 
     display: flex;
     align-items: center;
@@ -212,17 +233,25 @@ nav a, footer a {
     align-items: stretch;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 2rem;
     justify-content: center;
 }
 
 #courses .item {
     background-color: #FFF;
+    margin: 0 1rem 2rem;
     max-width: 532px;
     min-width: 25%;
 }
 
-#courses .item .content, #courses .item h3 {
+#courses .item img {
+    width: 100%;
+}
+
+#courses .item h3 {
+    padding: 1rem 1rem 0;
+}
+
+#courses .item .content {
     padding: 1rem 1rem 1.5rem;
 }
 
@@ -239,6 +268,22 @@ footer .content {
     align-items: baseline;
     flex-direction: row;
     justify-content: space-between;
+}
+
+footer a[href] {
+    color: #666;
+}
+
+footer a[href]:hover {
+    color: #444;
+}
+
+footer ul:hover a[href] {
+    color: #999;
+}
+
+footer ul:hover a[href]:hover {
+    color: #444;
 }
 
 @media only screen and (max-width: 767px) {
@@ -289,17 +334,25 @@ footer .content {
 
     #courses {
         background-color: #FFF;
+        border-top: 1px solid #DDD;
+        border-bottom: 1px solid #DDD;
         padding: 1.5rem;
 
         align-items: stretch;
     }
 
-    #courses-list {
-        gap: .5rem;
+    #courses h2 {
+        padding: 0 0 2rem;
     }
 
     #courses .item {
         background-color: #DDD;
+        margin: 0 1rem .5rem;
+    }
+
+    #courses .item h3 {
+        margin: 0;
+        padding: 1rem;
     }
 
     footer .content {
@@ -308,5 +361,34 @@ footer .content {
 
     footer h4 {
         margin-bottom: 1rem;
+    }
+}
+
+@supports (display: grid) {
+    #courses-list {
+        display: grid;
+        gap: 2rem;
+        grid-auto-rows: max-content;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #courses .item {
+        margin: 0;
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1023px) {
+        #courses-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        #courses-list {
+            display: flex;
+            gap: .5rem;
+        }
+
+        #courses .item {
+            margin: 0;
+        }
     }
 }
