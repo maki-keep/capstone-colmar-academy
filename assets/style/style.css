@@ -1,0 +1,312 @@
+*, :after, :before {
+    box-sizing: border-box;
+}
+
+html, body {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Arial", "Helvetica Neue", "Helvetica", sans-serif;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+h4, footer a, footer a[href] {
+    color: #666;
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+a[href] {
+    color: #069;
+    text-decoration: none;
+}
+
+button {
+    border: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+blockquote {
+    margin: 1.5rem 0;
+}
+
+blockquote p::before {
+    content: "\201C";
+}
+
+blockquote p::after {
+    content: "\201D";
+}
+
+figcaption {
+    color: #333;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+nav {
+    height: 4rem;
+    padding: 0 1.5rem;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .icon {
+    height: 2rem;
+}
+
+nav #logo {
+    display: flex;
+    align-items: center;
+}
+
+nav #logo-text, nav #logo-text-2 {
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+nav #logo-text {
+    color: #222;
+}
+
+nav #logo-text-2 {
+    color: #999;
+}
+
+
+nav ul, footer ul {
+    display: inline-flex;
+}
+
+nav a, footer a {
+    display: inline-block;
+    padding: .5rem;
+}
+
+.page {
+    background-color: #FFF;
+    border-right: 1px solid #999;
+    border-left: 1px solid #999;
+}
+
+#banner {
+    background-color: #DDD;
+    padding: 2rem 1.5rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#banner img {
+    width: 60%;
+}
+
+#banner .content {
+    margin-left: 1.5rem;
+}
+
+#banner h1 {
+    margin-bottom: 2rem;
+}
+
+#banner button {
+    background-color: #444;
+    color: #FFF;
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    min-width: 60%;
+}
+
+#information {
+    height: fit-content;
+    width: 100%;
+
+    display: flex;
+}
+
+#information-main {
+    padding: 2rem 1.5rem;
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#information-main img {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+#featured {
+    border-left: 1px solid #DDD;
+    padding: 2rem 0;
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.item h3, .item p, .item a {
+    margin-bottom: .5rem;
+}
+
+#featured .item {
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#featured .item img {
+    width: 35%;
+}
+
+#featured .item .content {
+    margin-left: 1rem;
+}
+
+#courses {
+    background-color: #DDD;
+    padding: 2rem 4.5rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#courses h2 {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+#courses-list {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+#courses .item {
+    background-color: #FFF;
+    max-width: 532px;
+    min-width: 25%;
+}
+
+#courses .item .content, #courses .item h3 {
+    padding: 1rem 1rem 1.5rem;
+}
+
+footer {
+    padding: 0 1rem 4rem;
+    width: 100%;
+}
+
+footer .content {
+    border-top: 1px solid #999;
+    padding: 1rem 1.5rem;
+
+    display: flex;
+    align-items: baseline;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 767px) {
+    nav #logo-text,
+    nav #logo-text-2,
+    nav ul,
+    #information-main,
+    #courses .item img,
+    #courses .item .content {
+        display: none;
+    }
+
+    #banner,
+    #featured .item,
+    #courses-list,
+    footer .content {
+        flex-direction: column;
+    }
+
+    #banner img {
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    #banner .content {
+        margin-left: 0;
+    }
+
+    #banner button {
+        width: 100%;
+    }
+
+    #featured {
+        width: 100%;
+    }
+
+    #featured .item {
+        align-items: flex-start;
+    }
+
+    #featured .item img {
+        margin-bottom: 1rem;
+    }
+
+    #featured .item .content {
+        margin-left: 0;
+    }
+
+    #courses {
+        background-color: #FFF;
+        padding: 1.5rem;
+
+        align-items: stretch;
+    }
+
+    #courses-list {
+        gap: .5rem;
+    }
+
+    #courses .item {
+        background-color: #DDD;
+    }
+
+    footer .content {
+        align-items: center;
+    }
+
+    footer h4 {
+        margin-bottom: 1rem;
+    }
+}
