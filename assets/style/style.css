@@ -159,9 +159,15 @@ nav a, footer a {
 #banner button {
     background-color: #444;
     color: #FFF;
+    cursor: pointer;
     font-size: 1.5rem;
     margin: 1.5rem 0;
     min-width: 60%;
+    transition: background-color .2s ease-in-out;
+}
+
+#banner button:hover {
+    background-color: #222;
 }
 
 #information {
@@ -223,9 +229,10 @@ nav a, footer a {
     flex-direction: column;
 }
 
-#courses h2 {
+#courses h2, #thesis h2 {
     padding: 2rem 0;
     text-align: center;
+    width: 100%;
 }
 
 #courses-list {
@@ -253,6 +260,52 @@ nav a, footer a {
 
 #courses .item .content {
     padding: 1rem 1rem 1.5rem;
+}
+
+#thesis {
+    height: fit-content;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#thesis-main {
+    padding: 2rem 1.5rem;
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#thesis-main video {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+#thesis-featured {
+    padding: 2rem 0;
+    width: 40%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#thesis-featured .item {
+    padding: 1rem;
+
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#thesis-featured .item img {
+    width: 35%;
+}
+
+#thesis-featured .item .content {
+    margin-left: 1rem;
 }
 
 footer {
@@ -292,13 +345,16 @@ footer ul:hover a[href]:hover {
     nav ul,
     #information-main,
     #courses .item img,
-    #courses .item .content {
+    #courses .item .content,
+    #thesis-main .content,
+    #thesis-featured {
         display: none;
     }
 
     #banner,
     #featured .item,
     #courses-list,
+    #thesis,
     footer .content {
         flex-direction: column;
     }
@@ -326,6 +382,7 @@ footer ul:hover a[href]:hover {
 
     #featured .item img {
         margin-bottom: 1rem;
+        width: 100%;
     }
 
     #featured .item .content {
@@ -341,7 +398,7 @@ footer ul:hover a[href]:hover {
         align-items: stretch;
     }
 
-    #courses h2 {
+    #courses h2, #thesis h2 {
         padding: 0 0 2rem;
     }
 
@@ -355,7 +412,17 @@ footer ul:hover a[href]:hover {
         padding: 1rem;
     }
 
+    #thesis-main {
+        padding: 0;
+        width: 100%;
+    }
+
+    #thesis-main video {
+        margin-bottom: 0;
+    }
+
     footer .content {
+        border-top: 0;
         align-items: center;
     }
 
